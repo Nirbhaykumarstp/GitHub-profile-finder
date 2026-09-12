@@ -1,19 +1,13 @@
-const userName=document.getElementById("userNameInput").value
+const url="https://api.github.com/users/Nirbhaykumarstp"
 
+const getapi=async ()=>{
+    console.log("fetching data...")
+    let response = await fetch(url)
+    let data=await response.json()
+    let img=data.avatar_url
+    let elem=document.querySelector("#user-image")
+    elem.src=img
+    console.log(data.avatar_url)
+}
 
-document.getElementById("submit").addEventListener("click",()=>{
-    
-    console.log(userName)
-})
-// Octokit.js
-// https://github.com/octokit/core.js#readme
-// const octokit = new Octokit()
-
-// await octokit.request('GET /user', {
-//   headers: {
-//     'X-GitHub-Api-Version': '2026-03-10'
-//   }
-// })
-
-const data=fetch("https://cli.github.com/manual/gh_api")
-console.log(data)
+getapi()

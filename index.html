@@ -16,11 +16,11 @@
             </h1>
         </nav>
     </header>
-    <main class="flex justify-center bg-black min-h-screen px-4">
+    <main class="flex flex-col bg-black min-h-screen align-middle">
 
-        <div class="w-full max-w-2xl">
+        <div class="w-full  flex justify-center flex-col align-middle py-3">
 
-            <h1 class="text-4xl sm:text-3xl md:text-4xl text-white py-4 text-center">
+            <h1 class="text-4xl sm:text-3xl md:text-4xl text-white text-center">
                 Search by GitHub username
             </h1>
             <div class="py-4">
@@ -28,10 +28,9 @@
                 <form action="" method="" class="flex flex-col sm:flex-row gap-3 justify-center w-full">
 
                     <input type="text" placeholder="Enter the Username" required id="userNameInput"
-                        class="text-base sm:text-xl border-2 border-white text-white bg-black px-3 py-3 rounded w-5xl sm:flex-1">
+                        class="text-base sm:text-xl border-2 border-white text-white bg-black px-3 py-3 rounded">
 
-                    <button class="bg-blue-400 text-lg sm:text-xl text-white px-10 py-3 rounded-md w-5xl sm:w-auto"
-                        id="submit">
+                    <button class="bg-blue-400 text-lg sm:text-xl text-white px-10 py-3 rounded-md" id="submit">
                         Submit
                     </button>
 
@@ -40,6 +39,65 @@
             </div>
 
         </div>
+
+        <section id="user">
+            <div id="user-details" class="text-white flex align-middle gap-7">
+                <div>
+                    <img alt="userprofile" id="user-image" height="300" width="300">
+                </div>
+                <div class="details" class="text-white">
+                    <ul class="flex gap-10">
+                        <li class="px-2 py-2 border-2 border-white rounded">Public Repositries</li>
+                        <li class="px-2 py-2 border-2 border-white rounded">Followers</li>
+                        <li class="px-2 py-2 border-2 border-white rounded">Following</li>
+                    </ul>
+                    <br>
+                    <div class="flex flex-col gap-5">
+                        <label for="Name">Name:
+                            <span>Nirbhay Kumar</span>
+                        </label>
+                        <label for="Website:">Website/Portfolio:
+                            <span>https://nirbhaykumar.vercel.app</span>
+                        </label>
+                        <label for="location">Location:
+                            <span>Uttarpradesh, sitapur</span>
+                        </label>
+                        <label for="acc-date">Account since:
+                            novenmber 2025
+                        </label>
+                        <div>
+                            <button class="bg-blue-400 text-xl px-2 py-2 rounded font-sans">View Profile</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="recent-repos" class="flex flex-col gap-10 text-xl text-white bg-black">
+                <table  class="border-2 border-white">
+                    <li>first repo
+                        <ul class="repo-detail">
+                            <li>Stars <span>1</span></li>
+                            <li>Forks <span>2</span></li>
+                            <li>Language <span>3</span></li>
+                        </ul>
+                    </li>
+                    <li>second repo
+                        <ul class="repo-detail">
+                            <li>Stars <span>1</span></li>
+                            <li>Forks <span>2</span></li>
+                            <li>Language <span>3</span></li>
+                        </ul>
+                    </li>
+                    <li>third repo
+                        <ul class="repo-detail">
+                            <li>Stars <span>1</span></li>
+                            <li>Forks <span>2</span></li>
+                            <li>Language <span>3</span></li>
+                        </ul>
+                    </li>
+                </table>
+            </div>
+        </section>
 
     </main>
 

@@ -190,6 +190,15 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1 {
+    width: var(--spacing);
+  }
+  .w-1\/2 {
+    width: calc(1 / 2 * 100%);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
   .w-full {
     width: 100%;
   }
@@ -240,9 +249,6 @@
   .bg-blue-400 {
     background-color: var(--color-blue-400);
   }
-  .bg-white {
-    background-color: var(--color-white);
-  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -272,10 +278,6 @@
   }
   .font-sans {
     font-family: var(--font-sans);
-  }
-  .text-2xl {
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
   .text-3xl {
     font-size: var(--text-3xl);
@@ -308,6 +310,12 @@
     outline-width: 1px;
   }
   @media (width >= 40rem) {
+    .sm\:block {
+      display: block;
+    }
+    .sm\:flex-col {
+      flex-direction: column;
+    }
     .sm\:flex-row {
       flex-direction: row;
     }
@@ -325,9 +333,43 @@
     }
   }
   @media (width >= 48rem) {
+    .md\:block {
+      display: block;
+    }
+    .md\:flex {
+      display: flex;
+    }
+    .md\:w-1 {
+      width: var(--spacing);
+    }
+    .md\:flex-col {
+      flex-direction: column;
+    }
+    .md\:flex-row {
+      flex-direction: row;
+    }
+    .md\:justify-center {
+      justify-content: center;
+    }
     .md\:text-4xl {
       font-size: var(--text-4xl);
       line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  @media (width >= 64rem) {
+    .lg\:flex {
+      display: flex;
+    }
+    .lg\:flex-row {
+      flex-direction: row;
+    }
+  }
+  @media (width >= 96rem) {
+    .\32 xl\:flex {
+      display: flex;
+    }
+    .\32 xl\:flex-row {
+      flex-direction: row;
     }
   }
 }

@@ -24,8 +24,7 @@
                 Search by GitHub username
             </h1>
             <div class="py-4">
-
-                <form action="" method="" class="flex flex-col sm:flex-row gap-3 justify-center w-full">
+                <form  class="flex flex-col sm:flex-row gap-3 justify-center w-full" id="form">
 
                     <input type="text" placeholder="Enter the Username" required id="userNameInput"
                         class="text-base sm:text-xl border-2 border-white text-white bg-black px-3 py-3 rounded">
@@ -41,32 +40,32 @@
         </div>
 
         <section id="user">
-            <div id="user-details" class="text-white flex align-middle gap-7">
+            <div id="user-details" class="text-white md:flex justify-center px-3 2xl:flex-row align-middle gap-7">
                 <div>
                     <img alt="userprofile" id="user-image" height="300" width="300">
                 </div>
                 <div class="details" class="text-white">
                     <ul class="flex gap-10">
-                        <li class="px-2 py-2 border-2 border-white rounded">Public Repositries</li>
-                        <li class="px-2 py-2 border-2 border-white rounded">Followers</li>
-                        <li class="px-2 py-2 border-2 border-white rounded">Following</li>
+                        <li class="px-2 py-2 border-2 border-white rounded" >Public Repositries <span id="publicRepo"></span></li>
+                        <li class="px-2 py-2 border-2 border-white rounded" >Followers <span id="followers"></span></li>
+                        <li class="px-2 py-2 border-2 border-white rounded" >Following <span id="following"></span></li>
                     </ul>
                     <br>
                     <div class="flex flex-col gap-5">
                         <label for="Name">Name:
-                            <span>Nirbhay Kumar</span>
+                            <span id="name"></span>
                         </label>
                         <label for="Website:">Website/Portfolio:
-                            <span>https://nirbhaykumar.vercel.app</span>
+                            <span id="portfolio"></span>
                         </label>
                         <label for="location">Location:
-                            <span>Uttarpradesh, sitapur</span>
+                            <span id="location"></span>
                         </label>
                         <label for="acc-date">Account since:
-                            novenmber 2025
+                            <span id="date"></span>
                         </label>
                         <div>
-                            <button class="bg-blue-400 text-xl px-2 py-2 rounded font-sans">View Profile</button>
+                            <button class="bg-blue-400 text-xl px-2 py-2 rounded font-sans" id="profile">View Profile</button>
                         </div>
                     </div>
 

@@ -1,0 +1,7 @@
+@import "tailwindcss";
+img{
+    border-radius: 50%;
+}
+.repo-detail{
+    display: flex;
+}

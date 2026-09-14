@@ -1,5 +1,6 @@
 const form=document.getElementById("form")
 const submitbtn=document.getElementById("submit")
+
 const userDetails={
   image:document.getElementById("user-image"),
   publicRepo:document.getElementById("publicRepo"),
@@ -30,19 +31,31 @@ submitbtn.addEventListener("click",async (Event)=>{
   userDetails.ProfileView.addEventListener("click",(event)=>{
     window.open(data.html_url)
   })
+
+  let repoDetails= async()=>{
+    let repos=await fetch(`https://api.github.com/users/${userName}/repos?sort=pushed&direction=desc&per_page=6`)
+    return repos.json()
+  }
+  let repoData= await repoDetails()
+  console.log(typeof repoData)
+  console.log(repoData)
+  console.log(repoData.length)
+  const repos=document.getElementById("repo-div")
+  for(let i=1;i<repoData.length;i++)
+  {
+    let newLi=document.createElement("li")
+    let newUl=document.createElement("ul")
+
+    for(let j=1;j<4;j++)
+    {
+      let anotherLi=document.createElement("li")
+      newUl.appendChild(anotherLi)
+    }
+
+    newLi.classList.add("repo-details")
+    newUl.classList.add("repo-detail")
+    repos.appendChild(newLi)
+    newLi.appendChild(newUl)
+  }
   console.log(userDetails)
 })
-
-// const url="https://api.github.com/users/Nirbhaykumarstp"
-
-// const getapi=async ()=>{
-//     console.log("fetching data...")
-//     let response = await fetch(url)
-//     let data=await response.json()
-//     let img=data.avatar_url
-//     let elem=document.querySelector("#user-image")
-//     elem.src=img
-//     console.log(data.avatar_url)
-// }
-
-// getapi()

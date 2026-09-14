@@ -4,4 +4,20 @@ img{
 }
 .repo-detail{
     display: flex;
+    gap: 1rem;
+}
+.repo-detail li{
+    border: 0.1rem solid aliceblue;
+    border-radius: 0.2rem;
+    list-style: none;
+    padding: 0.4rem;
+    /* background-color: #8ec2ff; */
+    color: whitesmoke;
+}
+.repo-details{
+    border: 0.1rem solid;
+    border-color: aliceblue;
+    border-radius: 0.5rem;
+    list-style: none;
+    padding: 0.5rem;
 }

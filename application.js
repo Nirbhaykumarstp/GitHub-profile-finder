@@ -1,5 +1,7 @@
 const form=document.getElementById("form")
 const submitbtn=document.getElementById("submit")
+const section=document.getElementById("user")
+section.style.display="none"
 
 const userDetails={
   image:document.getElementById("user-image"),
@@ -15,6 +17,7 @@ const userDetails={
 
 submitbtn.addEventListener("click",async (Event)=>{
   Event.preventDefault()
+  section.style.display="block"
   let userName=document.getElementById("userNameInput").value.trim()
   let apirule=`https://api.github.com/users/${userName}`
   let response = await fetch(apirule)
@@ -46,6 +49,11 @@ submitbtn.addEventListener("click",async (Event)=>{
   {
     let newLi=document.createElement("li")
     newLi.id=`List-${i}`
+    newLi.innerText=repoData[i-1].name
+    newLi.addEventListener("click",()=>{
+      window.open(repoData[i-1].html_url)
+    })
+
     let newUl=document.createElement("ul")
     for(let j=1;j<4;j++)
     {
@@ -53,15 +61,15 @@ submitbtn.addEventListener("click",async (Event)=>{
       anotherLi.id=`li-${i}-${j}`
       if(anotherLi.id==`li-${i}-1`)
       {
-        anotherLi.innerText="stars"
+        anotherLi.innerText=`Stars: ${repoData[i-1].stargazers_count}`
       }
       else if(anotherLi.id==`li-${i}-2`)
       {
-        anotherLi.innerText="Forks"
+        anotherLi.innerText=`Forks: ${repoData[i-1].forks}`
       }
       else if(anotherLi.id==`li-${i}-3`)
       {
-        anotherLi.innerText="Language"
+        anotherLi.innerText=`Language: ${repoData[i-1].language}`
       }
       newUl.appendChild(anotherLi)
     }

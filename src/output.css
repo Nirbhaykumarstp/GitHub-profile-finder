@@ -179,6 +179,9 @@
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -339,12 +342,17 @@ img {
 .repo-detail {
   display: flex;
   gap: 1rem;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+#submit {
+  cursor: pointer;
 }
 .repo-detail li {
   border: 0.1rem solid aliceblue;
   border-radius: 0.2rem;
   list-style: none;
-  padding: 0.4rem;
+  padding: 0.3rem;
   color: whitesmoke;
 }
 .repo-details {

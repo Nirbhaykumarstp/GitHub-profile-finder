@@ -6,6 +6,8 @@ img{
     display: flex;
     gap: 1rem;
     padding:0.3rem;
+}
+.repo-detail:hover{
     cursor: pointer;
 }
 #submit{

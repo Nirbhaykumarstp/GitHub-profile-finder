@@ -50,6 +50,7 @@ submitbtn.addEventListener("click",async (Event)=>{
     let newLi=document.createElement("li")
     newLi.id=`List-${i}`
     newLi.innerText=repoData[i-1].name
+
     newLi.addEventListener("click",()=>{
       window.open(repoData[i-1].html_url)
     })

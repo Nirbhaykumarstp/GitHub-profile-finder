@@ -41,17 +41,30 @@ submitbtn.addEventListener("click",async (Event)=>{
   console.log(repoData)
   console.log(repoData.length)
   const repos=document.getElementById("repo-div")
+
   for(let i=1;i<repoData.length;i++)
   {
     let newLi=document.createElement("li")
+    newLi.id=`List-${i}`
     let newUl=document.createElement("ul")
-
     for(let j=1;j<4;j++)
     {
       let anotherLi=document.createElement("li")
+      anotherLi.id=`li-${i}-${j}`
+      if(anotherLi.id==`li-${i}-1`)
+      {
+        anotherLi.innerText="stars"
+      }
+      else if(anotherLi.id==`li-${i}-2`)
+      {
+        anotherLi.innerText="Forks"
+      }
+      else if(anotherLi.id==`li-${i}-3`)
+      {
+        anotherLi.innerText="Language"
+      }
       newUl.appendChild(anotherLi)
     }
-
     newLi.classList.add("repo-details")
     newUl.classList.add("repo-detail")
     repos.appendChild(newLi)

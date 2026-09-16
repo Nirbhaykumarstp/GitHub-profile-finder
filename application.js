@@ -98,26 +98,26 @@ submitbtn.addEventListener("click",(Event)=>{
 
 //DEBOUNCING-- performance optimization technique, executes the function only after the period of inactivity
 
-// function callingAPIfun()
-// {
-//   handleMyEvent()
-//   section.style.display="block"
-//   document.getElementById("repo-div").innerHTML=""
-// }
-// function debouncing(func,delay)
-// {
-//     let timeoutId=null
-//     return function()
-//     {
-//         clearTimeout(timeoutId)
-//         timeoutId=setTimeout(()=>
-//         {
-//           func()
-//         },delay)
-//     }
-// }
-// const debouncefun=debouncing(callingAPIfun,2000)
-// userName.addEventListener('input',(event)=>{
+function callingAPIfun(text)
+{
+  handleMyEvent(text)
+  section.style.display="block"
+  document.getElementById("repo-div").innerHTML=""
+}
+function debouncing(func,delay)
+{
+    let timeoutId=null
+    return function(user)
+    {
+        clearTimeout(timeoutId)
+        timeoutId=setTimeout(()=>
+        {
+          func(user)
+        },delay)
+    }
+}
+const debouncefun=debouncing(callingAPIfun,2000)
+userName.addEventListener('input',(event)=>{
     
-//     debouncefun(event.target.value) //1  234567
-// })
+    debouncefun(event.target.value) //1  234567
+})

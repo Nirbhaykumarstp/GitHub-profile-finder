@@ -85,8 +85,9 @@ async function handleMyEvent(userName)
   catch(Error)
   {
     console.log("Something Went Wrong")
-    // let h1=document.createElement("h1").innerText="Something Went Wrong"
-    // document.window.appendChild(h1)
+    let h1=document.createElement("h1").innerText="Something Went Wrong Please check the userName"
+    h1.style.display="block"
+    document.getElementById("user").appendChild(h1)
   }
 }
 

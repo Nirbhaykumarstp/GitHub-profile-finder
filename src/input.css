@@ -7,8 +7,10 @@ img{
     gap: 1rem;
     padding:0.3rem;
 }
-.repo-detail:hover{
+#repo-div li:hover{
     cursor: pointer;
+    border: 2px solid;
+    border-color: #8ec2ff;
 }
 #submit{
     cursor: pointer;

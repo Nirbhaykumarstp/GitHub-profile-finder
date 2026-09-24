@@ -9,14 +9,18 @@
 </head>
 
 <body>
-    <header class="bg-blue-400 px-4 py-4 w-full">
-        <nav>
+    <header class="bg-gray-800 ay-800 px-4 py-4 w-full">
+        <nav class="flex flex-row  items-center justify-between ">
             <h1 class="text-3xl sm:text-4xl text-white m-2 font-sans">
                 Github Finder
             </h1>
+            <div class="flex flex-row gap-15 px-7">
+                <li class="list-none text-white hover:underline decoration-blue-600 underline-offset-5"><a href="index.html">DashBoard</a></li>
+                <li class="list-none text-white hover:underline decoration-blue-600 underline-offset-5"><a href="phase2.html">Reports</a></li>
+            </div>
         </nav>
     </header>
-    <main class="flex flex-col items-center bg-black min-h-screen w-full">
+    <main class="flex flex-col items-center bg-gray-950 min-h-screen w-full">
 
         <div class="w-full max-w-3xl flex flex-col items-center justify-center py-6 px-4">
 
@@ -64,9 +68,9 @@
                         <label for="acc-date">Account since:
                             <span id="date"></span>
                         </label>
-                        <div>
-                            <button class="w-auto sm:w-auto bg-blue-400 text-lg sm:text-xltext-white px-4 py-4 rounded font-sans cursor-pointer hover:bg-blue-500 transition mt-1" id="profile" id="profile">View
-                                Profile</button>
+                        <div class="flex flex-row gap-5">
+                            <button class="w-auto sm:w-auto bg-blue-400 text-lg sm:text-xltext-white px-4 py-4 rounded font-sans cursor-pointer hover:bg-blue-500 transition mt-1" id="profile" id="profile">View Profile</button>
+                            <button class="w-auto sm:w-auto bg-blue-400 text-lg sm:text-xltext-white px-4 py-4 rounded font-sans cursor-pointer hover:bg-blue-500 transition mt-1" id="analysis-btn" id="profile">Analyse Repos</button>  
                         </div>
                     </div>
 

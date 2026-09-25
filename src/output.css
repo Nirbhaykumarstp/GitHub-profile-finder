@@ -280,6 +280,9 @@
   .min-w-1\/2 {
     min-width: calc(1 / 2 * 100%);
   }
+  .min-w-full {
+    min-width: 100%;
+  }
   .flex-1 {
     flex: 1;
   }
@@ -546,6 +549,9 @@
     }
     .sm\:w-auto {
       width: auto;
+    }
+    .sm\:min-w-full {
+      min-width: 100%;
     }
     .sm\:flex-row {
       flex-direction: row;

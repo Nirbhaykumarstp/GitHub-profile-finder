@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav class="bg-white shadow dark:bg-gray-800">
+    <nav class="bg-white shadow min-w-full dark:bg-gray-800 sm:min-w-full">
         <div
             class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300 gap-10">
             <li class="list-none flex-1">
@@ -27,10 +27,10 @@
         <div class="max-w-2xl m-auto  px-8 py-4 bg-white rounded-lg shadow-md dark:bg-gray-800 ">
             <div class="flex items-center gap-10">
                 <h2><a href=""><span class="text-2xl font-light text-white dark:text-gray-400">GitHub-finder</span></a></h2>
-                <li class="list-none text-white">Branches: <span>2</span></li>
-                <li class="list-none text-white">Developers: <span>1</span></li>
-                <li class="list-none text-white"> Commits: <span>24</span></li>
-                <li class="list-none text-white"> Pull req: <span>2</span></li>
+                <li class="list-none text-white">Branches: <span id="totalbranch">2</span></li>
+                <li class="list-none text-white">Developers: <span id="totaldevlprs">1</span></li>
+                <li class="list-none text-white"> Commits: <span id="total-commits">24</span></li>
+                <li class="list-none text-white"> Pull req: <span id="totalprs">2</span></li>
             </div>
 
             <div class="mt-2 flex flex-col gap-10">
@@ -42,8 +42,8 @@
                             <th class="text-lg">Pull req</th>
                         </tr>
                     </thead>
-                    <tbody class="text-lg text-white">
-                        <tr>
+                    <tbody class="text-lg text-white" id="branch-commit-pr">
+                        <!-- <tr>
                             <td>Main</td>
                             <td>10</td>
                             <td>1</td>
@@ -52,7 +52,7 @@
                             <td>development</td>
                             <td>14</td>
                             <td>1</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
                 <table class="min-w-1/2 divide-y divide-gray-200">
@@ -93,7 +93,10 @@
                 </div>
             </div>
         </div>
+        <div id="error-msg" class="hidden">
+            <h2 class="text-center text-3xl font-bold">Something Went wrong <span id="actual-msg"></span></h2>
+        </div>
     </main>
 </body>
-
+<script src="phase2.js"></script>
 </html>

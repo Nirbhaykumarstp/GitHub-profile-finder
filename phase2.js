@@ -1,8 +1,9 @@
-let userName="AdtyaGupta72"
-let repo="VersionControllingTest"
+let userName="Nirbhaykumarstp"
+let repo="Github-profile-finder"
 // let branchName="feature/AddIncome"
 let errordiv=document.getElementById("error-msg")
 const Totaldata={}
+const commitsData={}
 let callingBranches=async ()=>{
     try{
         let branchesAPI=await fetch(`https://api.github.com/repos/${userName}/${repo}/branches?per_page=100`)
@@ -36,7 +37,7 @@ let callingBranches=async ()=>{
         devArr.forEach((obj)=>{
             const row=document.createElement("tr")
             row.innerHTML=`
-            <td><span><img src="${obj.avatar_url}" height="30" width="30" >${obj.login}</span></td>
+            <td class="inline py-1"><span><img src="${obj.avatar_url}" height="30" width="30">${obj.login}</span></td>
             <td>${obj.contributions}</td>
             `
             devTable.appendChild(row)
@@ -73,15 +74,19 @@ let callingBranches=async ()=>{
                     {
                         for(let l=0;l<data[k].length;l++)
                         {
-                           
-                            console.log(data[k][l]["commit"]["author"]["name"])
-                            console.log(new Date(data[k][l]["commit"]["author"]["date"]).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }))
+                            if(!commitsData[`${data[k][l]["commit"]["author"]["name"]}`])
+                            {
+                                commitsData[`${data[k][l]["commit"]["author"]["name"]}`]=[]
+                            }
+                            commitsData[`${data[k][l]["commit"]["author"]["name"]}`].push(`${new Date(data[k][l]["commit"]["author"]["date"]).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`)
+                            // console.log(data[k][l]["commit"]["author"]["name"])
+                            // console.log(new Date(data[k][l]["commit"]["author"]["date"]).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }))
                         }
                     }
                 }
                 commitTable.appendChild(row)
             }
-            
+            console.log(commitsData)
             console.log(branchArr)
             console.log(data)
         }

@@ -1,5 +1,5 @@
-let userName="Nirbhaykumarstp"
-let repo="Github-profile-finder"
+let userName="AdtyaGupta72"
+let repo="VersionControllingTest"
 // let branchName="feature/AddIncome"
 let errordiv=document.getElementById("error-msg")
 const Totaldata={}
@@ -74,11 +74,11 @@ let callingBranches=async ()=>{
                     {
                         for(let l=0;l<data[k].length;l++)
                         {
-                            if(!commitsData[`${data[k][l]["commit"]["author"]["name"]}`])
+                            if(!commitsData[`${data[k][l]["author"]["login"]}`])
                             {
-                                commitsData[`${data[k][l]["commit"]["author"]["name"]}`]=[]
+                                commitsData[`${data[k][l]["author"]["login"]}`]=[]
                             }
-                            commitsData[`${data[k][l]["commit"]["author"]["name"]}`].push(`${new Date(data[k][l]["commit"]["author"]["date"]).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`)
+                            commitsData[`${data[k][l]["author"]["login"]}`].push(`${new Date(data[k][l]["commit"]["author"]["date"]).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`)
                             // console.log(data[k][l]["commit"]["author"]["name"])
                             // console.log(new Date(data[k][l]["commit"]["author"]["date"]).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }))
                         }
@@ -102,7 +102,7 @@ let callingBranches=async ()=>{
         // document.getElementById("totalbranch").innerText=0
     }
 }
-//callingBranches()
+// callingBranches()
 
 let callingCommits=async ()=>{
     let commitsAPI=await fetch(`https://api.github.com/repos/${userName}/${repo}/commits?sha=${branchName}&per_page=100`)

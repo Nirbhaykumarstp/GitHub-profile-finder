@@ -104,11 +104,14 @@ let callingBranches=async ()=>{
 }
 // callingBranches()
 
-let callingCommits=async ()=>{
-    let commitsAPI=await fetch(`https://api.github.com/repos/${userName}/${repo}/commits?sha=${branchName}&per_page=100`)
-    let commitArr=await commitsAPI.json()
-    let totalCommits=commitArr.length
-    console.log(totalCommits)
-    console.log(commitArr)
-}
-//callingCommits()
+
+
+
+// let callingCommits=async ()=>{
+//     let commitsAPI=await fetch(`https://api.github.com/repos/${userName}/${repo}/commits?sha=${branchName}&per_page=100`)
+//     let commitArr=await commitsAPI.json()
+//     let totalCommits=commitArr.length
+//     console.log(totalCommits)
+//     console.log(commitArr)
+// }
+// //callingCommits()

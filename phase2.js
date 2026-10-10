@@ -1,5 +1,5 @@
-let userName = "AdtyaGupta72"
-let repo = "VersionControllingTest"
+let userName = "Nirbhaykumarstp"
+let repo = "JS---PRACTICE-Questions"
 // let branchName="feature/AddIncome"
 let errordiv = document.getElementById("error-msg")
 const Totaldata = {}
@@ -34,16 +34,6 @@ let callingBranches = async () => {
         const commitTable = document.getElementById("branch-commit-pr")
         const devTable = document.getElementById("developer-commits")
         devTable.innerHTML = ""
-        devArr.forEach((obj) => {
-            const row = document.createElement("tr")
-            // console.log(commitsData[`${obj.login}`])
-            // let avgCommitperactiveDays = (commitsData[`${obj.login}`].length) / (activeDays[`${obj.login}`].size)
-            row.innerHTML = `
-                <td class="inline py-1"><span><img src="${obj.avatar_url}" height="30" width="30">${obj.login}</span></td>
-                <td>${obj.contributions}</td>
-                `
-            devTable.appendChild(row)
-        })
         async function fetchTotalcommit() {
             let dynamicBranch = branchArr.map(async (obj) => {
                 let commitsAPI = await fetch(`https://api.github.com/repos/${userName}/${repo}/commits?sha=${obj.name}&per_page=100`)
@@ -81,8 +71,22 @@ let callingBranches = async () => {
                     activeDays[`${obj.login}`].add(day)
                 })
             })
+            devArr.forEach((obj) => {
+                const row = document.createElement("tr")
+                console.log(commitsData[`${obj.login}`])
+                let avgCommitperactiveDays = Math.round((commitsData[`${obj.login}`].length) / (activeDays[`${obj.login}`].size))
+                let consistency=Math.round((((activeDays[`${obj.login}`].size)/30)*100))
+                row.innerHTML = `
+                    <td class="inline py-1"><span><img src="${obj.avatar_url}" height="30" width="30">${obj.login}</span></td>
+                    <td>${obj.contributions}</td>
+                    <td>${avgCommitperactiveDays}</td>
+                    <td>${consistency} %</td>
+                    `
+                devTable.appendChild(row)
+            })
         }
         fetchTotalcommit()
+        
         console.log(commits)
         console.log(dynamicBranch)
     }

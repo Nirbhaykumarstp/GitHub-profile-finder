@@ -26,7 +26,7 @@
     <main class="bg-gray-600 sm:min-h-screen">
         <div class="max-w-2xl m-auto  px-8 py-4 bg-white rounded-lg shadow-md dark:bg-gray-800 ">
             <div class="flex items-center gap-10">
-                <h2><a href=""><span class="text-2xl font-light text-white dark:text-gray-400">GitHub-finder</span></a></h2>
+                <h2><a href=""><span class="text-2xl font-light text-white dark:text-gray-400" id="repo-name"></span></a></h2>
                 <li class="list-none text-white">Branches: <span id="totalbranch">2</span></li>
                 <li class="list-none text-white">Developers: <span id="totaldevlprs">1</span></li>
                 <li class="list-none text-white"> Commits: <span id="total-commits">24</span></li>
@@ -75,21 +75,6 @@
                     </tbody>
                 </table>
             </div>
-
-            <div class="flex items-center justify-between mt-4">
-                <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline" tabindex="0" role="link">Read
-                    more</a>
-
-                <div class="flex items-center">
-                    <img class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
-                        src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80"
-                        alt="avatar">
-                    <a class="font-bold text-gray-700 cursor-pointer dark:text-gray-200" tabindex="0" role="link">Nirbhaykumarstp</a>
-                </div>
-            </div>
-        </div>
-        <div id="error-msg" class="hidden">
-            <h2 class="text-center text-3xl font-bold">Something Went wrong <span id="actual-msg"></span></h2>
         </div>
     </main>
 </body>

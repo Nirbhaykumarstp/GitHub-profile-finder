@@ -1,5 +1,5 @@
-let userName = "Nirbhaykumarstp"
-let repo = "JS---PRACTICE-Questions"
+let userName = "AdtyaGupta72"
+let repo = "VersionControllingTest"
 // let branchName="feature/AddIncome"
 let errordiv = document.getElementById("error-msg")
 const Totaldata = {}
@@ -22,6 +22,7 @@ let callingBranches = async () => {
         Totaldata.totaldevelopers = devArr.length
         Totaldata.totalPrs = prObj.total_count
 
+        document.getElementById("repo-name").innerText=repo
         document.getElementById("totalbranch").innerText = Totaldata.totalbranches
         document.getElementById("totaldevlprs").innerText = Totaldata.totaldevelopers
         Totaldata.totalCommits = 0
